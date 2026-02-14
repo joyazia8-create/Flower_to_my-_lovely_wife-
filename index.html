@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at top, #1a1a1a, #000000);
+        overflow: hidden;
+        font-family: 'Georgia', serif;
+    }
+
+    .scene {
+        position: relative;
+        width: 400px;
+        height: 500px;
+    }
+
+    /* Stem */
+    .stem {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 10px;
+        height: 300px;
+        background: linear-gradient(to bottom, #2e8b57, #013220);
+        transform: translateX(-50%);
+        border-radius: 5px;
+    }
+
+    /* Leaves */
+    .leaf {
+        position: absolute;
+        width: 120px;
+        height: 60px;
+        background: radial-gradient(circle at 30% 30%, #3cb371, #006400);
+        border-radius: 120px 0;
+    }
+
+    .leaf.left {
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-130%) rotate(-30deg);
+    }
+
+    .leaf.right {
+        bottom: 200px;
+        left: 50%;
+        transform: translateX(30%) rotate(30deg) scaleX(-1);
+    }
+
+    /* Flower center */
+    .center {
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, #8b0000, #4b0000);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+    }
+
+    /* Petals */
+    .petal {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle at 50% 50%, #ff4d4d, #b30000);
+        border-radius: 50%;
+        top: 80px;
+        left: 50%;
+        transform-origin: center bottom;
+        opacity: 0.95;
+        box-shadow: inset -10px -10px 20px rgba(0,0,0,0.4);
+    }
+
+    .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg); }
+    .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg); }
+    .petal:nth-child(3) { transform: translateX(-50%) rotate(90deg); }
+    .petal:nth-child(4) { transform: translateX(-50%) rotate(135deg); }
+    .petal:nth-child(5) { transform: translateX(-50%) rotate(180deg); }
+    .petal:nth-child(6) { transform: translateX(-50%) rotate(225deg); }
+    .petal:nth-child(7) { transform: translateX(-50%) rotate(270deg); }
+    .petal:nth-child(8) { transform: translateX(-50%) rotate(315deg); }
+
+    /* Romantic message */
+    .message {
+        position: absolute;
+        bottom: -60px;
+        width: 100%;
+        text-align: center;
+        color: #ffcccc;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        animation: fadeIn 3s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<div class="scene">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+
+    <div class="center"></div>
+
+    <div class="stem"></div>
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="message">Forever Yours ❤️</div>
+</div>
+
+</body>
+</html>
