@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Love ❤️</title>
+<title>For My Love</title>
 <style>
     body {
         margin: 0;
@@ -10,7 +10,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: radial-gradient(circle at top, #1a1a1a, #000000);
+        background: radial-gradient(circle at center, #1b0000 0%, #000000 80%);
         overflow: hidden;
         font-family: 'Georgia', serif;
     }
@@ -26,83 +26,97 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        width: 10px;
-        height: 300px;
+        width: 12px;
+        height: 280px;
         background: linear-gradient(to bottom, #2e8b57, #013220);
         transform: translateX(-50%);
-        border-radius: 5px;
+        border-radius: 6px;
+        z-index: 1;
     }
 
     /* Leaves */
     .leaf {
         position: absolute;
-        width: 120px;
-        height: 60px;
-        background: radial-gradient(circle at 30% 30%, #3cb371, #006400);
-        border-radius: 120px 0;
+        width: 130px;
+        height: 65px;
+        background: radial-gradient(circle at 30% 30%, #3cb371, #004d00);
+        border-radius: 130px 0;
+        box-shadow: inset -8px -8px 15px rgba(0,0,0,0.5);
+        z-index: 2;
     }
 
     .leaf.left {
-        bottom: 150px;
+        bottom: 160px;
         left: 50%;
-        transform: translateX(-130%) rotate(-30deg);
+        transform: translateX(-140%) rotate(-35deg);
     }
 
     .leaf.right {
-        bottom: 200px;
+        bottom: 210px;
         left: 50%;
-        transform: translateX(30%) rotate(30deg) scaleX(-1);
+        transform: translateX(40%) rotate(35deg) scaleX(-1);
     }
 
-    /* Flower center */
-    .center {
+    /* Rose container */
+    .rose {
         position: absolute;
-        top: 120px;
+        top: 60px;
         left: 50%;
-        width: 80px;
-        height: 80px;
-        background: radial-gradient(circle, #8b0000, #4b0000);
-        border-radius: 50%;
         transform: translateX(-50%);
-        z-index: 10;
-        box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        width: 220px;
+        height: 220px;
+        z-index: 5;
+        animation: bloom 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes bloom {
+        from { transform: translateX(-50%) scale(0.95); }
+        to { transform: translateX(-50%) scale(1.05); }
     }
 
     /* Petals */
     .petal {
         position: absolute;
-        width: 140px;
-        height: 140px;
-        background: radial-gradient(circle at 50% 50%, #ff4d4d, #b30000);
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle at 40% 40%, #ff4d4d, #990000 70%);
         border-radius: 50%;
-        top: 80px;
-        left: 50%;
-        transform-origin: center bottom;
+        box-shadow: inset -15px -20px 30px rgba(0,0,0,0.6);
         opacity: 0.95;
-        box-shadow: inset -10px -10px 20px rgba(0,0,0,0.4);
     }
 
-    .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg); }
-    .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg); }
-    .petal:nth-child(3) { transform: translateX(-50%) rotate(90deg); }
-    .petal:nth-child(4) { transform: translateX(-50%) rotate(135deg); }
-    .petal:nth-child(5) { transform: translateX(-50%) rotate(180deg); }
-    .petal:nth-child(6) { transform: translateX(-50%) rotate(225deg); }
-    .petal:nth-child(7) { transform: translateX(-50%) rotate(270deg); }
-    .petal:nth-child(8) { transform: translateX(-50%) rotate(315deg); }
+    .p1 { transform: rotate(0deg) scale(1); }
+    .p2 { transform: rotate(30deg) scale(0.95); }
+    .p3 { transform: rotate(60deg) scale(0.9); }
+    .p4 { transform: rotate(90deg) scale(0.85); }
+    .p5 { transform: rotate(120deg) scale(0.8); }
+    .p6 { transform: rotate(150deg) scale(0.75); }
 
-    /* Romantic message */
+    /* Inner swirl */
+    .center {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle at 50% 50%, #cc0000, #4b0000 80%);
+        border-radius: 50%;
+        top: 40px;
+        left: 40px;
+        box-shadow: 0 0 40px rgba(255,0,0,0.5);
+    }
+
+    /* Romantic text */
     .message {
         position: absolute;
         bottom: -60px;
         width: 100%;
         text-align: center;
-        color: #ffcccc;
-        font-size: 22px;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-        animation: fadeIn 3s ease-in-out forwards;
+        color: #ffb3b3;
+        font-size: 24px;
+        letter-spacing: 2px;
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
         opacity: 0;
+        animation: fadeIn 4s ease forwards;
+        animation-delay: 2s;
     }
 
     @keyframes fadeIn {
@@ -113,22 +127,23 @@
 <body>
 
 <div class="scene">
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
 
-    <div class="center"></div>
+    <div class="rose">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        <div class="petal p6"></div>
+        <div class="center"></div>
+    </div>
 
     <div class="stem"></div>
     <div class="leaf left"></div>
     <div class="leaf right"></div>
 
-    <div class="message">Forever Yours ❤️</div>
+    <div class="message">My Love Blooms For You</div>
+
 </div>
 
 </body>
